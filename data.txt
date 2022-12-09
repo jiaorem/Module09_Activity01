@@ -1,0 +1,1 @@
+[{"id":1,"name":"Huh Yunjin","age":21,"salary":60000},{"id":2,"name":"Kim Minji","age":18,"salary":10000},{"id":3,"name":"Nicha Yontararak","age":25,"salary":80000},{"id":4,"name":"Myoui Mina","age":25,"salary":100000}]

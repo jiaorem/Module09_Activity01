@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Activity 01</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    </head>
+    <body>
+        <h1>Angular JS AJAX Application</h1>
+        <div ng-app="" ng-controller="employeeController">
+            <table class="center">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Salary</th>
+                </tr>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.age}}</td>
+                    <td>{{employee.salary}}</td>
+                </tr>
+            </table>
+
+        </div>
+    </body>
+    <script>
+        function employeeController($scope, $http){
+            var url = "http://localhost/pdc20/api_r.php";
+            //var url = "data.txt";
+            $http.get(url).success(function(response){
+                $scope.employees = response;
+            });
+        }
+    </script>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table, th, td{
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 10px;
+            width: 600px;
+            word-wrap: break-word;
+        }
+        table tr:nth-child(odd){
+            background-color: #4b0908;
+            color: #fff
+        } 
+        table tr:nth-child(even){
+            background-color: #b97d10;
+        }
+    </style>
+</html>
